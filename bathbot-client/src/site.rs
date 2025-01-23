@@ -16,6 +16,7 @@ pub enum Site {
     OsuStats,
     OsuTrack,
     Respektive,
+    Relax,
     Twitch,
 }
 
@@ -37,6 +38,7 @@ impl Site {
             Self::OsuStats => "OsuStats",
             Self::OsuTrack => "OsuTrack",
             Self::Respektive => "Respektive",
+            Self::Relax => "Relax",
             Self::Twitch => "Twitch",
         }
     }
