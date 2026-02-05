@@ -339,7 +339,9 @@ impl Context {
             let unlocked = Context::get().shard_senders.read().unwrap();
 
             for sender in unlocked.values() {
-                let _: Result<_, _> = sender.close(CloseFrame::NORMAL);
+                // RESUME means Discord maintains the connection so presumably the reshard goes through faster
+                // Recommended by the Twilight documentation
+                let _: Result<_, _> = sender.close(CloseFrame::RESUME);
             }
         }
 
